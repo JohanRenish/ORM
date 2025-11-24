@@ -1,4 +1,4 @@
-# Ex02 Django ORM Web Application
+# Ex01 Django ORM Web Application
 ## Date: 
 
 ## AIM
@@ -23,12 +23,32 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+models.py
+---
+from django.db import models
+from django.contrib import admin 
+class car(models.Model):
+    regno=models.CharField(max_length=20,help_text="Car_ID")
+    Car_Name=models.CharField(max_length=100)
+    Price=models.IntegerField()
+    year=models.IntegerField()
+class CarAdmin(admin.ModelAdmin):
+    list_display=('regno','Car_Name','Price','year')
+
+admin.py
+ ---   
+from django.contrib import admin
+from . models import car,CarAdmin
+admin.site.register(car,CarAdmin)
+
+# Register your models here.
+
 
 
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+[text](README.md) ![text](<Screenshot (54).png>)
 
 
 ## RESULT
