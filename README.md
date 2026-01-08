@@ -22,10 +22,10 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM :
-    models.py
-    ```
-    from django.db import models
-    from django.contrib import admin 
+ models.py
+```
+from django.db import models
+from django.contrib import admin 
     class car(models.Model):
         regno=models.CharField(max_length=20,help_text="Car_ID")
         Car_Name=models.CharField(max_length=100)
@@ -33,13 +33,14 @@ Execute Django admin and create details for 10 books
         year=models.IntegerField()
     class CarAdmin(admin.ModelAdmin):
         list_display=('regno','Car_Name','Price','year')
-    ```
-    admin.py
-    ---   
-    from django.contrib import admin
-    from . models import car,CarAdmin
-    admin.site.register(car,CarAdmin)
-    ```
+        
+```
+admin.py
+```
+from django.contrib import admin
+from . models import car,CarAdmin
+admin.site.register(car,CarAdmin)
+```
 
 # Register your models here.
 
